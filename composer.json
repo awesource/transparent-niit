@@ -1,0 +1,14 @@
+{
+    "name": "awesource/transparent-niit-api",
+    "type": "project",
+    "require": {
+        "slim/slim": "^3.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "samshal",
+            "email": "samueladeshina73@gmail.com"
+        }
+    ]
+}
