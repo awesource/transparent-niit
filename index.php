@@ -23,26 +23,30 @@ header('Access-Control-Allow-Headers: Content-Type, Cache-Control, X-Requested-W
 header('Access-Control-Allow-Methods: GET, OPTIONS');
 
 $app->group('/', function(){
-	$this->group('course-catalog/', function(){
-		$this->get('courses', function($request, $response, $args){
+	$this->get('', function($request, $response, $args){
+		return $response->withJson("",204);
+	});
+
+	$this->group('course-catalog', function(){
+		$this->get('/courses', function($request, $response, $args){
 			$result = json_decode(file_get_contents("http://public.niitabuja.com/course-catalog/tables/json/Course.json"));
 
 			return $response->withJson($result, 200);
 		});
 
-		$this->get('programs', function($request, $response, $args){
+		$this->get('/programs', function($request, $response, $args){
 			$result = json_decode(file_get_contents("http://public.niitabuja.com/course-catalog/tables/json/Program.json"));
 
 			return $response->withJson($result, 200);
 		});
 
-		$this->get('course-categories', function($request, $response, $args){
+		$this->get('/course-categories', function($request, $response, $args){
 			$result = json_decode(file_get_contents("http://public.niitabuja.com/course-catalog/tables/json/CourseCategory.json"));
 
 			return $response->withJson($result, 200);
 		});
 
-		$this->get('course-category-semesters', function($request, $response, $args){
+		$this->get('/course-category-semesters', function($request, $response, $args){
 			$result = json_decode(file_get_contents("http://public.niitabuja.com/course-catalog/tables/json/CourseCategorySemester.json"));
 
 			return $response->withJson($result, 200);
