@@ -20,7 +20,7 @@ $app = new Slim\App($settings);
 
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: Content-Type, Cache-Control, X-Requested-With');
-header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+header('Access-Control-Allow-Methods: GET, OPTIONS');
 
 $app->group('/', function(){
 	$this->group('course-catalog/', function(){
